@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+.post-wrapper h1 {
+  font-size: 24px;
+  color: #59c1bd;
+  font-family: Arial;
+  overflow: hidden;
+  height: 70px;
+  text-overflow: ellipsis;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  outline: none;
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image-wrapper img {
+  height: 100%;
+  width: 100%;
+}
+.post-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card-main {
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.card-main .loader-show {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-main .loader-show img {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  height: 100vh;
+  background-image: url("../public/weather.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  z-index: 2;
+}
+
+.main::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.input-wrapper input {
+  padding: 12px 18px;
+  border-radius: 8px;
+  padding-left: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-position: 20px center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8.87482 16.75C13.2241 16.75 16.7498 13.2242 16.7498 8.875C16.7498 4.52576 13.2241 1 8.87482 1C4.52557 1 0.999817 4.52576 0.999817 8.875C0.999817 13.2242 4.52557 16.75 8.87482 16.75Z' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M15 15L23 23' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.temp-unit:after {
+  position: absolute;
+  content: "";
+  height: 38px;
+  width: 2px;
+  right: -2px;
+  top: 50%;
+  transform: translatey(-50%);
+  background: #ffffff;
+  display: none;
+}
+
+.weather-image{
+background-color: #28d3d3;
+
 }
